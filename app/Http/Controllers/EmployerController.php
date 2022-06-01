@@ -2,18 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employer;
 use Illuminate\Http\Request;
 
-class Employer extends Controller
+class EmployerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+    }
+
+
     public function index()
     {
-        return view('employer/index');
+
+        $employers = Employer::all();
+
+        return view('employer.index')->with('employers', $employers);
     }
 
     /**
