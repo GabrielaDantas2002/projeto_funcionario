@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Cadastrar</a>
+                        <a class="nav-link" href="{{route('employer.create')}}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Listar</a>
@@ -34,10 +34,10 @@
         <section>
             @yield('content')
         </section>
-        <footer class="d-flex justify-content-center">
-            <small>EmForms &copy; 2022</small>
-        </footer>
     </div>
+    <footer class="d-flex justify-content-center">
+        <small>EmForms &copy; 2022</small>
+    </footer>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
