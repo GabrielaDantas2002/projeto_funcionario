@@ -16,7 +16,6 @@
                     <td>{{ $employer->name }}</td>
                     <td>{{ $employer->lastname }}</td>
                     <td>{{ $employer->ocupation }}</td>
-                    <td><a href="{{ route('employer.show', $employer->id) }}">Exibir</a></td>
                     <td><a href="{{ route('employer.edit', $employer->id) }}">Editar</a></td>
                     <td>
                         <form action="{{ route('employer.destroy', $employer->id) }}" method="post">

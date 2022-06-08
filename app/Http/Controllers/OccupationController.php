@@ -2,30 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
-use App\Models\Occupation;
 use Illuminate\Http\Request;
 
-class EmployerController extends Controller
+class OccupationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
-    public function __construct()
-    {
-    }
-
-
     public function index()
     {
-
-        $employers = Employer::all();
-
-        return view('employer.index')->with('employers', $employers);
+        
     }
 
     /**
@@ -35,11 +23,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-
-        $occupations = Occupation::all();
-
-        return view('employer.create')->with('occupations', $occupations);
-
+        //
     }
 
     /**
@@ -50,15 +34,7 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        $employer = new Employer();
-
-        $employer->name = $request->input('name');
-        $employer->lastname = $request->input('lastname');
-        $employer->occupation_id = $request->input('occupation');
-        $employer->save();
-
-
-        return (redirect(route('client.index')));
+        //
     }
 
     /**
