@@ -58,7 +58,7 @@ class EmployerController extends Controller
         $employer->save();
 
 
-        return (redirect(route('client.index')));
+        return (redirect(route('employer.index')));
     }
 
     /**
