@@ -103,6 +103,9 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Employer::destroy($id);
+
+        return (redirect(route('employer.index')));
+
     }
 }
