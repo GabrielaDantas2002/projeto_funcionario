@@ -36,10 +36,9 @@ class EmployerController extends Controller
     public function create()
     {
 
-        $occupations = Occupation::all();
+        $occupations = Occupation::with('occupation')->all();
 
         return view('employer.create')->with('occupations', $occupations);
-
     }
 
     /**
@@ -80,7 +79,11 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employer = Employer::find($id);
+        $occupations = Occupation::all();
+
+
+        return view('employer.edit')->with('employer', $employer)->with('occupations', $occupations);
     }
 
     /**
@@ -92,7 +95,15 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employer = Employer::find($id);
+
+        $employer->name = $request->input('name');
+        $employer->lastname = $request->input('lastname');
+        $employer->occupation_id = $request->input('occupation');
+
+        $employer->save();
+
+        return(redirect(route('employer.index')));
     }
 
     /**
@@ -106,6 +117,5 @@ class EmployerController extends Controller
         Employer::destroy($id);
 
         return (redirect(route('employer.index')));
-
     }
 }

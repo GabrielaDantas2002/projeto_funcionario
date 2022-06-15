@@ -8,6 +8,7 @@
             <th>Nome</th>
             <th>Sobrenome</th>
             <th>Ocupação</th>
+            <th></th>
         </tr>
         @if (isset($employers))
             @foreach ($employers as $employer)
@@ -15,14 +16,17 @@
                     <th>{{ $employer->id }}</th>
                     <td>{{ $employer->name }}</td>
                     <td>{{ $employer->lastname }}</td>
-                    <td>{{ $employer->ocupation }}</td>
-                    <td><a href="{{ route('employer.edit', $employer->id) }}">Editar</a></td>
+                    <td>{{ $employer->occupation }}</td>
                     <td>
-                        <form action="{{ route('employer.destroy', $employer->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Excluir">
-                        </form>
+                        <div class="d-flex flex-row col-md-5 justify-content-around">
+                            <div class="mr-5"><a href="{{ route('employer.edit', $employer->id) }}"
+                                    class="btn btn-info">Editar</a></div>
+                            <form action="{{ route('employer.destroy', $employer->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Excluir" class="btn btn-danger margin-left-5">
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach
