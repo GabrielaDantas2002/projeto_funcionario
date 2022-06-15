@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('employer.create')}}">Cadastrar</a>
+                        <a class="nav-link" href="{{ route('employer.create') }}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Listar</a>
+                        <a class="nav-link" href="{{ route('employer.index') }}">Listar</a>
                     </li>
                 </ul>
             </div>
@@ -40,4 +40,5 @@
     </footer>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+
 </html>

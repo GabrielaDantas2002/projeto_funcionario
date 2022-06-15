@@ -9,8 +9,10 @@ class Employer extends Model
 {
     use HasFactory;
 
-    public function occupations()
+    protected $with = ['occupation'];
+
+    public function occupation()
     {
-        return $this->hasOne(Occupation::class);
+        return $this->belongsTo(Occupation::class);
     }
 }

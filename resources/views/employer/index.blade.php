@@ -16,7 +16,7 @@
                     <th>{{ $employer->id }}</th>
                     <td>{{ $employer->name }}</td>
                     <td>{{ $employer->lastname }}</td>
-                    <td>{{ $employer->occupation }}</td>
+                    <td>{{ $employer->occupation->role }}</td>
                     <td>
                         <div class="d-flex flex-row col-md-5 justify-content-around">
                             <div class="mr-5"><a href="{{ route('employer.edit', $employer->id) }}"

@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('base');
 });
 
-Route::resource('/employer', EmployerController::class);
+Route::resource('/employer', EmployerController::class)->middleware(['auth']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth']);

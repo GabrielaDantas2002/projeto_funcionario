@@ -36,7 +36,7 @@ class EmployerController extends Controller
     public function create()
     {
 
-        $occupations = Occupation::with('occupation')->all();
+        $occupations = Occupation::all();
 
         return view('employer.create')->with('occupations', $occupations);
     }
